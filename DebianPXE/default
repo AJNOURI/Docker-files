@@ -1,0 +1,22 @@
+DISPLAY boot.txt
+
+DEFAULT jessie_amd64_install
+
+LABEL jessie_amd64_install
+        kernel debian/jessie/amd64/linux
+        append vga=normal initrd=debian/jessie/amd64/initrd.gz  --
+LABEL jessie_amd64_linux
+        kernel debian/jessie/amd64/linux
+        append vga=normal initrd=debian/jessie/amd64/initrd.gz  --
+
+LABEL jessie_amd64_expert
+        kernel debian/jessie/amd64/linux
+        append priority=low vga=normal initrd=debian/jessie/amd64/initrd.gz  --
+
+LABEL jessie_amd64_rescue
+        kernel debian/jessie/amd64/linux
+        append vga=normal initrd=debian/jessie/amd64/initrd.gz  rescue/enable=true --
+
+PROMPT 1
+TIMEOUT 10
+

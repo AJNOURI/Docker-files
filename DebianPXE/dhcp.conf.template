@@ -1,0 +1,15 @@
+ddns-update-style none;
+option domain-name "nouri.com";
+option domain-name-servers 8.8.8.8;
+default-lease-time 600;
+max-lease-time 7200;
+log-facility local7;
+subnet 192.168.21.0 netmask 255.255.255.0 {
+        range 192.168.21.100 192.168.21.200; ## clients range
+        filename "pxelinux.0";
+        next-server 192.168.21.254;i ## tftp IP (this one)
+        option subnet-mask 255.255.255.0;     ## subnet mask
+        option broadcast-address 192.168.21.255; ## broadcast
+        option routers 192.168.21.254; ## router IP
+}
+
