@@ -1,4 +1,4 @@
-# DockerVPC image
+# SSHFS data image
 # AJ NOURI: ajn.bin@gmail.com
 # cciethebeginning.wordpress.com
 #
@@ -20,5 +20,8 @@ RUN rm -f /etc/service/sshd/down
 RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 
-RUN echo 'root:gns3vpc' | chpasswd
+RUN echo 'root:gns3passwd' | chpasswd
 RUN sed -i "s/#PermitRootLogin without-password/PermitRootLogin yes/" /etc/ssh/sshd_config
+
+RUN mkdir /data
+VOLUME /data
