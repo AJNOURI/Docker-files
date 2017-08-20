@@ -11,7 +11,3 @@ CMD ["/sbin/my_init"]
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -y update && apt-get install -y sshfs
-
-RUN mkdir /mount /data
-VOLUME /mount
-RUN ls -s /mount /data
